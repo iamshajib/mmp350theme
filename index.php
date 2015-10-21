@@ -15,7 +15,6 @@
 get_header(); ?>
 
 	<?php
-
 	?>
 
 	
