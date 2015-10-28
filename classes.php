@@ -69,15 +69,15 @@
 			public function __construct($_name, $_type, $_country){
 				$this->name   = $_name;
 				$this->type    = $_type;
-				$this->weight = $_country;
+				$this->country = $_country;
 			}
 
 			public function dogType(){
-				echo $this->name." is ".$this->type." type dog.";
+				echo $this->name." is ".$this->type." type dog. Who lives in ".$this->country;
 				echo "<br>";
 			}
 		}
-			$dog1 = new Dog("Tiger", "German Shepherd", "USA");
+			$dog1 = new Dog("Tiger", "German Shepherd", "USA.");
 
 			$dog1->dogType();
 
