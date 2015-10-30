@@ -18,8 +18,6 @@ get_header(); ?>
 	<?php
 	?>
 
-	
-   shajibfdfd
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
@@ -40,6 +38,25 @@ get_header(); ?>
 			
 			<?php query_posts('tag=readings' ); ?>
 
+            //This is the Plugin which will be in every theme
+
+            <?php rewind_posts(); ?>
+            <div id="fabee">
+            <?php
+
+                $args = array( 'post_type' => 'best_friend', 'posts_per_page' => 10 );
+                $loop = new WP_Query( $args );
+                while ( $loop->have_posts() ) : $loop->the_post();
+                the_title();
+                echo '<div class="entry-content">';
+                the_content();
+                echo '</div>';
+
+                endwhile;
+
+            ?>
+            </div>
+
 			<?php while ( have_posts() ) : the_post(); ?>
 				$do_not_duplicate = $post->ID;
 
@@ -52,6 +69,7 @@ get_header(); ?>
 
 
 			<?php endwhile; ?>
+
 
 
 			<?php /* Second loop */ ?>
@@ -72,50 +90,41 @@ get_header(); ?>
 
 			<?php query_posts('catagory_name=loop' ); ?>
 
+
+
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'template-parts/content', 'tenSix' ); ?>
 				
 
 
-				<!-- <div class="myPost"> 
-					<div class="myPostTitle">
-						<?php the_title(); ?>
-					 </div>
-					 <div class="myPostContent">
-					 	<?php the_content(); ?>
-					 </div>
-				</div>
 
-				<div class="tenSixOne">
-					<?php tenSixFunOne(); ?>
-				</div> -->
 
 			<?php 
 
-				function appleCounter($bucketSize){
-
-					$x = 1;
-
-					while ($x <= $bucketSize){
-
-						if ($x == 1){
-							echo $x. "apple";
-							echo "<br>";
-						}
-
-						else {
-							echo $x. "apples";
-							echo "<br>";
-						}
-
-						$x ++;
-
-					}
-
-				}	
-
-				appleCounter(11);
+//				function appleCounter($bucketSize){
+//
+//					$x = 1;
+//
+//					while ($x <= $bucketSize){
+//
+//						if ($x == 1){
+//							echo $x. "apple";
+//							echo "<br>";
+//						}
+//
+//						else {
+//							echo $x. "apples";
+//							echo "<br>";
+//						}
+//
+//						$x ++;
+//
+//					}
+//
+//				}
+//
+//				appleCounter(11);
 
 			?>
 

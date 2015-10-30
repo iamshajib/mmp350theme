@@ -78,6 +78,8 @@
 			}
 		}
 			$dog1 = new Dog("Tiger", "German Shepherd", "USA.");
+			$dog2 = new Dog("MAC", "Bulldog", "UK");
+			$dog3 = new Dog("Lucy", "poodle", "Bangladesh";)
 
 			$dog1->dogType();
 
